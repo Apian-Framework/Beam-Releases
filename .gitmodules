@@ -1,0 +1,21 @@
+[submodule "Beam.Cli"]
+	path = Beam.Cli
+	url = git@github.com:Apian-Framework/Beam.Cli.git
+[submodule "Apian.Net"]
+	path = Apian.Net
+	url = git@github.com:Apian-Framework/Apian.Net.git
+[submodule "ApianAppUtils"]
+	path = ApianAppUtils
+	url = git@github.com:Apian-Framework/ApianAppUtils.git
+[submodule "BeamGameCode"]
+	path = BeamGameCode
+	url = git@github.com:Apian-Framework/BeamGameCode.git
+[submodule "NotUnityEngine"]
+	path = NotUnityEngine
+	url = git@github.com:Apian-Framework/NotUnityEngine.git
+[submodule "P2pNet"]
+	path = P2pNet
+	url = git@github.com:Apian-Framework/P2pNet.git
+[submodule "Unilog"]
+	path = Unilog
+	url = git@github.com:Apian-Framework/Unilog.git
