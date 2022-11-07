@@ -20,3 +20,6 @@
 [submodule "UniLog"]
 	path = UniLog
 	url = git@github.com:Apian-Framework/UniLog.git
+[submodule "ApianCrypto"]
+	path = ApianCrypto
+	url = git@github.com:Apian-Framework/ApianCrypto.git
