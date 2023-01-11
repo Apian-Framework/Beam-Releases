@@ -25,11 +25,24 @@ if  "%lfsresult%" == "" (
 )
 echo LFS installed.
 
-for /f %%x in ('git status --porcelain') do set stuff=%%x
-if  not "%stuff%" == "" (
-  Echo Repository has uncommitted changes. Commit or remove them.
+echo.
+echo Checking rpository.
+for /f "delims=" %%a in ('git status --porcelain') do set res="%%a"
+if not  %res% == "" (
+  echo Repository has untracked files or uncommitted changes.
+    echo %res%
   goto done
 )
+
+git diff --no-ext-diff --quiet --exit-code
+if %ERRORLEVEL% neq 0 (
+  echo Repository has uncommitted changes
+  goto done
+)
+
+echo Repo Clean!
+
+:done2
 
 
 echo.
