@@ -25,15 +25,18 @@ if  "%lfsresult%" == "" (
 )
 echo LFS installed.
 
-echo \nTagging current submodules as %RELEASE_TAG%
-rem git submodule foreach "git tag %RELEASE_TAG%"
+echo.
+echo Tagging current submodules as %RELEASE_TAG%
+git submodule foreach "git tag %RELEASE_TAG%"
 
-echo \nPushing tagged submodules
-rem git submodule foreach "git push --tags"
+echo.
+echo Pushing tagged submodules
+git submodule foreach "git push --tags"
 
-rem echo \nCreating and pushing release branch  %RELEASE_TAG%
+echo .
+echo Creating and pushing release branch  %RELEASE_TAG%
 git checkout -b %RELEASE_TAG%
-git push --tags
+git push --all
 
 
 
