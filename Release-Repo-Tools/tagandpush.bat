@@ -26,13 +26,7 @@ if  "%lfsresult%" == "" (
 echo LFS installed.
 
 echo.
-echo Checking rpository.
-for /f "delims=" %%a in ('git status --porcelain') do set res="%%a"
-if not  %res% == "" (
-  echo Repository has untracked files or uncommitted changes.
-    echo %res%
-  goto done
-)
+echo Checking repository.
 
 git diff --no-ext-diff --quiet --exit-code
 if %ERRORLEVEL% neq 0 (
@@ -40,9 +34,13 @@ if %ERRORLEVEL% neq 0 (
   goto done
 )
 
-echo Repo Clean!
+for /f %%a in ('git status --porcelain') do set res="%%a"
+if  %res% == "??" (
+  echo Repository has untracked files.
+  goto done
+)
 
-:done2
+
 
 
 echo.
