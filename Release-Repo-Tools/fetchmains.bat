@@ -1,6 +1,17 @@
 @echo off
+rem
+rem Checks out and pulls the 'main' branch of every submodule.
+rem This is almost always what you want to do if you want to create and a "what it's all
+rem like now" branch of the -release repo.
+rem
+rem First you call this, then you call "tagandpush"
+rem
+rem if you want want some specfic other version of one or more of the submodule you'll need
+rem to check it/tmen out befrore tagandpush
 
 rem check for git lfs support
+rem this is only necessary because of the big binary assets in the Beam.Unity repo.
+rem
 echo Checking for git Large File Storage support...
 for /f "delims=" %%a in ('git lfs version^|findstr /B /R /C:"^git-lfs/[0-9\.]* (.*)"') do @set lfsresult=%%a
 if  "%lfsresult%" == "" (
