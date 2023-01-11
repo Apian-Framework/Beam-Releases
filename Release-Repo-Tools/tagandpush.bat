@@ -9,9 +9,9 @@ rem Then the script creates a new *branch* with that name in the current repo an
 rem pushes the branch.
 
 
-set RELEASE_TAG=%1
-if  "%RELEASE_TAG%" == "" (
-  echo usage: tagandpush ^<RELEASE_TAG^>
+set RELEASE_NAME=%1
+if  "%RELEASE_NAME%" == "" (
+  echo usage: tagandpush ^<RELEASE_NAME^>
   exit /b
 )
 
@@ -25,21 +25,28 @@ if  "%lfsresult%" == "" (
 )
 echo LFS installed.
 
+for /f %%x in ('git status --porcelain') do set stuff=%%x
+if  not "%stuff%" == "" (
+  Echo Repository has uncommitted changes. Commit or remove them.
+  goto done
+)
+
+
 echo.
-echo Tagging current submodules as %RELEASE_TAG%
-git submodule foreach "git tag %RELEASE_TAG%"
+echo Tagging current submodules as %RELEASE_NAME%
+git submodule foreach "git tag %RELEASE_NAME%"
 
 echo.
 echo Pushing tagged submodules
 git submodule foreach "git push --tags"
 
 echo .
-echo Creating and pushing release branch  %RELEASE_TAG%
-git checkout -b %RELEASE_TAG%
+echo Creating and pushing release branch  %RELEASE_NAME%
+git checkout -b %RELEASE_NAME%
+git checkout main
+git merge %RELEASE_NAME%
 git push --all
 
-
-
-
+:done
 
 
