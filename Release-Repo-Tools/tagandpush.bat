@@ -35,12 +35,10 @@ if %ERRORLEVEL% neq 0 (
 )
 
 for /f %%a in ('git status --porcelain') do set res="%%a"
-if  %res% == "??" (
-  echo Repository has untracked files.
+if  "%res%" == "??" (
+  rem echo Repository has untracked files.
   goto done
 )
-
-
 
 
 echo.
