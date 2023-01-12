@@ -1,33 +1,33 @@
 [submodule "Beam.Cli"]
 	path = Beam.Cli
-	url = git@github.com:Apian-Framework/Beam.Cli.git
+	url = ../Beam.Cli.git
 [submodule "Apian.Net"]
 	path = Apian.Net
-	url = git@github.com:Apian-Framework/Apian.Net.git
+	url = ../Apian.Net.git
 [submodule "ApianAppUtils"]
 	path = ApianAppUtils
-	url = git@github.com:Apian-Framework/ApianAppUtils.git
+	url = ../ApianAppUtils.git
 [submodule "BeamGameCode"]
 	path = BeamGameCode
-	url = git@github.com:Apian-Framework/BeamGameCode.git
+	url = ../BeamGameCode.git
 [submodule "NotUnityEngine"]
 	path = NotUnityEngine
-	url = git@github.com:Apian-Framework/NotUnityEngine.git
+	url = ../NotUnityEngine.git
 [submodule "P2pNet"]
 	path = P2pNet
-	url = git@github.com:Apian-Framework/P2pNet.git
+	url = ../P2pNet.git
 [submodule "UniLog"]
 	path = UniLog
-	url = git@github.com:Apian-Framework/UniLog.git
+	url = ../UniLog.git
 [submodule "ApianCrypto"]
 	path = ApianCrypto
-	url = git@github.com:Apian-Framework/ApianCrypto.git
+	url = ../ApianCrypto.git
 [submodule "Beam.Unity"]
 	path = Beam.Unity
-	url = git@github.com:Apian-Framework/Beam.Unity.git
+	url = ../Beam.Unity.git
 [submodule "MqttJS-Unity"]
 	path = MqttJS-Unity
-	url = git@github.com:Apian-Framework/MqttJS-Unity.git
+	url = ../MqttJS-Unity.git
 [submodule "Libp2p-Unity"]
 	path = Libp2p-Unity
-	url = git@github.com:Apian-Framework/Libp2p-Unity.git
+	url = ../Libp2p-Unity.git
