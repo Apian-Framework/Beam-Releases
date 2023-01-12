@@ -25,21 +25,19 @@ if  "%lfsresult%" == "" (
 )
 echo LFS installed.
 
+rem I didn't have a lot of success checking to see if the repo was had
+rem uncommitted changes or untracked files rem programatically
+rem (using `git status --porcelain` and `git diff`)
+rem so I decided it was better anyway just to show the status and ask
+
 echo.
-echo Checking repository.
+echo Checking repository status:
+echo.
+git status
+echo.
 
-git diff --no-ext-diff --quiet --exit-code
-if %ERRORLEVEL% neq 0 (
-  echo Repository has uncommitted changes
-  goto done
-)
-
-for /f %%a in ('git status --porcelain') do set res="%%a"
-if  %res% == "??" (
-  echo Repository has untracked files.
-  goto done
-)
-
+set /p PROCEED="OK to proceed? (y/N): "
+if NOT "%PROCEED%" == "y"  exit /b
 
 echo.
 echo Tagging current submodules as %RELEASE_NAME%
@@ -55,7 +53,5 @@ git checkout -b %RELEASE_NAME%
 git checkout main
 git merge %RELEASE_NAME%
 git push --all
-
-:done
 
 
