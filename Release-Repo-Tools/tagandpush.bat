@@ -48,9 +48,9 @@ echo Pushing tagged submodules
 git submodule foreach "git push --tags"
 
 echo .
-echo Creating and pushing release branch  %RELEASE_NAME%
+echo Creating release branch  %RELEASE_NAME%, merging into main, and pushing it all.
 git checkout -b %RELEASE_NAME%
-git checkout main
+git switch main
 git merge %RELEASE_NAME%
 git push --all
 
