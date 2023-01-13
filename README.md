@@ -10,13 +10,64 @@ This repository is my attempt at a solution. Cloning just it is all that is nece
 
 As an extra added bonus, if someone is interested in creating an Apian app (which is kinda the point to all of this) but has no interest in working on the Apian codebase itself, a clone of this repo can be used to satisfy all of their project's build references.
 
+---
+
 ## Installation
 
+### .NET
 The Apian Framework runs under the open-source cross-platform .NET 6.0 (or newer) environment, so you will first have to install it. There are many tutorials on the web describing how to do this for almost any platform, but I usually find it easiest to simply go straight to the source:
 
-[Get it from MicroSoft](https://dotnet.microsoft.com/download)
+[Get .NET from MicroSoft](https://dotnet.microsoft.com/download)
 
-Once you have that installed, clone this repository and its submodules (make sure to use `--recurse submodules` )
+### Beam-Releases
+Once you have .NET installed, clone this repository and its submodules (make sure to use `--recurse submodules` )
 
 `git clone --recurse-submodules https://github.com/Apian-Framework/Beam-Releases.git`
 
+---
+
+## Selecting a Release
+
+Immediately after you clone it, the repository will have the `main` branch checked out, which generally corresponds to he most recent release. To see a list of the releases available, use the command
+
+`git branch -a`
+
+to list all of the branches. Initially the list will contain `main` and all of the available remote branches. I Setting the release version is just a matter of switching to a particular branch. So, to switch to the branch `remotes/origin/REL_230112b` you would execute:
+
+`git switch REL_230112b`
+
+and git would create a local tracking branch corresponding to  the remote one _and_ make it current.
+
+_Note:_ Because these "releases" are really just collections of particular versions of the various repos and don;t correspond to any overall feature or bug-fix changes, the version names do not follow the semver format. Most of them simply represent that date. `REL_230112b`, for instance, is the 2nd release for January 11, 2023.
+
+---
+
+## Building Beam.Cli
+
+To build the console version of Beam you will first need to open a terminal. Unfortunately, .NET doesn't (yet?) have the concept of a default project for a solution, so you either have to specify a project file in your commands, or actually be in the directory containing the project file. The latter is usually easier, so:
+
+`cd Beam.CLI/src/BeamCli`
+
+To make sure everything is in place, you can restore all of the dependencies:
+
+`dotnet restore`
+
+or actually just try running the app:
+
+`dotnet run -- --help`
+
+will list the options. To learn more about them check out the [Beam.Cli readme](https://github.com/Apian-Framework/Beam.Cli#readme)
+
+---
+
+## Building Beam.Unity
+
+To build Beam under Unity 3D you will have to have a licensed copy of Unity on you development machine.
+
+The project references for  Unity are all in `Beam.Unity/packages/manifest.json` and by default expect all of the dependencies to be in folders "beside" `Beam.Unity`. Since that's how they are organized in this repository all you should need to do is to start Unity Hub and open the Beam.Unity folder as a project.
+
+---
+
+## Using this repository to satisfy project references in your own builds
+
+TBD (Hint: uses `Directory.Build.props`)
