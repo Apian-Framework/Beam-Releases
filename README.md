@@ -2,11 +2,11 @@
 
 **A collection of versioned git submodules of all of the repos needed for working releases of Beam**
 
-Apian has an awful lot of moving parts, and almost all of them are currently in development. For this reason Beam and other apps are currently built using project (source) references to the various Apian pieces, rather than nuget package references. WHile using a single "monorepo" might be a good idea, I'm not sure my git-fu is strong enough to manage something like that. So I'm going with separate package repositories.
+Apian has an awful lot of moving parts, and almost all of them are currently in development. For this reason Beam and other apps are currently built using project (source) references to the various Apian pieces, rather than Nuget package references. While using a single "monorepo" might be a good idea, I'm not sure my git-fu is strong enough to manage something like that. So I'm going with separate package repositories.
 
-Working on the code with things this works fine for me or anyone else who has already cloned all of the necessary Apian repos locally, but it's really a pain for anyone who just wants to "have a look" and maybe build and the Beam CLI and Unity applications.
+Working on the code with things this way works fine for me or anyone else who has already cloned all of the necessary Apian repos locally, but it's really a pain for anyone who just wants to "have a look" and maybe build and the Beam CLI and Unity demo applications.
 
-This repository is my attempt at a solution. Cloning just it is all that is necessary to examine and build all of the different releases of Beam. I find that development is git submodules is a fragile and hairy affair, so I don't recommend doing it in this repo, but looking and building and running are easy.
+This repository is my attempt at a solution. Cloning just it is all that is necessary to examine and build all of the different releases of Beam. I find that development within git submodules is a fragile and hairy affair, so I don't recommend doing it in this repo - but looking and building and running are easy.
 
 As an extra added bonus, if someone is interested in creating an Apian app (which is kinda the point to all of this) but has no interest in working on the Apian codebase itself, a clone of this repo can be used to satisfy all of their project's build references.
 
@@ -36,9 +36,9 @@ to list all of the branches. Initially the list will contain `main` and all of t
 
 `git switch REL_230112b`
 
-and git would create a local tracking branch corresponding to  the remote one _and_ make it current.
+and git would create a local tracking branch corresponding to  the remote one and make it current.
 
-_Note:_ Because these "releases" are really just collections of particular versions of the various repos and don;t correspond to any overall feature or bug-fix changes, the version names do not follow the semver format. Most of them simply represent that date. `REL_230112b`, for instance, is the 2nd release for January 11, 2023.
+*Note:* Because these "releases" are really just collections of particular versions of the various repos and don;t correspond to any overall feature or bug-fix changes, the version names do not follow the semver format. Most of them simply represent that date. `REL_230112b`, for instance, is the 2nd release for January 11, 2023.
 
 ---
 
