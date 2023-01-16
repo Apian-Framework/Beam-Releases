@@ -1,0 +1,28 @@
+<Project>
+
+    <!-- Rename to 'Directory.Build.props' Case is important on most systems! )  -->
+
+  <PropertyGroup>
+
+    <!--  
+        Rename to 'Directory.Build.props' ( case is important! ) and add any source definitions that are outside
+        this Beam-Release directory tree.
+        
+        Definitions used by Beam "dotnet" builds include:
+        
+        ApianAppUtilsSource
+        ApianCryptoSource
+        ApianNetSource
+        BeamGameCodeSource
+        NotUnityEngineSource
+        P2pNetSource
+        UniLogSource
+
+        Example:  <ApianNetSource>$(MSBuildThisFileDirectory)..\Apian.Net</ApianNetSource>
+
+       NOTE: Unity 3d builds use packages\manifest.json to resolve locations and pay no attention do Directory.Build.props
+    -->
+
+
+  </PropertyGroup>
+</Project>
