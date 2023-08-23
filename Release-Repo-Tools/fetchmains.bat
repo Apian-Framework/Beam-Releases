@@ -4,7 +4,17 @@ rem Checks out and pulls the 'main' branch of every submodule.
 rem This is almost always what you want to do if you want to create and a "what it's all
 rem like now" branch of the -release repo.
 rem
-rem First you call this, then you call "tagandpush"
+rem  ** Usage **
+rem
+rem a)  First you call this, which fetches all of the current "main" submodule branches
+rem
+rem b) Then ensure that the main [foo]-releases repo is on its main branch
+rem
+rem c) Then stage and commit all of the changes to the -release repo (the submodule updates you fetched)
+rem
+rem d) Then call "tagandpush", which will inform you if there are any uncommited changes. If so, fix 'em.
+rem 
+rem e) call "tagandpush" again and it'll create the tags and push the new branch to the main repo.
 rem
 rem if you want want some specfic other version of one or more of the submodule you'll need
 rem to check it/tmen out befrore tagandpush
