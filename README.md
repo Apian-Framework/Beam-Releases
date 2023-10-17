@@ -20,7 +20,7 @@ The Apian Framework runs under the open-source cross-platform .NET 6.0 (or newer
 [Get .NET from MicroSoft](https://dotnet.microsoft.com/download)
 
 ### git LFS
-The `Beam.Unity` project - which is probably what you are looking to build - makes use of `git lfs` (Large File Storage) to sensibly manage large binary files. LFS support if not installed by default in `git` go you will need to make sure that you have it installed.
+The `Beam.Unity` project - which is probably what you are looking to build - makes use of `git lfs` (Large File Storage) to sensibly manage large binary files. LFS support if not installed by default in `git` so you will need to make sure that you have it installed.
 
 To find out, enter:
 
@@ -57,7 +57,7 @@ Immediately after you clone it, the repository will have the `main` branch check
 
 `git branch -a`
 
-to list all of the branches. Initially the list will contain `main` and all of the available remote branches. I Setting the release version is just a matter of switching to a particular branch. So, to switch to the branch `remotes/origin/REL_230112b` you would execute:
+to list all of the branches. Initially the list will contain `main` and all of the available remote branches. Setting the release version is just a matter of switching to a particular branch. So, to switch to the branch `remotes/origin/REL_230112b` you would execute:
 
 `git switch --recurse-submodules REL_230112b`
 
